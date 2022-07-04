@@ -7,7 +7,7 @@ export default async (req,res)=>{
     const { search } = req.query; 
     try {
      const client = await clientPromise
-     const db = client.db("osasart")
+     const db = client.db("test")
      let allposts  = await  db.collection('posts')
      .find( { 'heading' : { '$regex' : '', '$options' : 'i' } } )
      .toArray()

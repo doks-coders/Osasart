@@ -11,8 +11,10 @@ export default async (req,res)=>{
         if(category != 1) {categoryVarification = {category:category}}
 
         console.log({page,limit,category,search})
+
      const client = await clientPromise
-     const db = client.db("osasart")
+     const db = client.db("test")
+
 
          //3D Animation, Architecture Design, 3D Modelling
 
@@ -36,6 +38,8 @@ export default async (req,res)=>{
             let posts =  await db.collection('posts').find(values)
             .limit(limit * 1)
             .skip((page - 1) * limit).toArray();
+
+            console.log({posts})
        
            res.status(200).json({posts,numberOfPosts:numberOfPosts.length});
         }

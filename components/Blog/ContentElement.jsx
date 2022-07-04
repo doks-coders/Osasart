@@ -207,7 +207,7 @@ let setElement = (key, value) => {
             element = (<><Heading fontSize={{ base: 'lg', sm: 'lg', md: 'xl' }} mt="4" mb="1">{value}</Heading></>);
             break;
         case 'image':
-            element = (<><Image height={{ base: '200px', sm: '200px', md: "400px" }} w="100%" objectFit={'cover'} src={value}></Image></>);
+            element = (<><Image my='6' height={{ base: '200px', sm: '200px', md: "400px" }} w="100%" objectFit={'cover'} src={value}></Image></>);
 
             break;
     }
@@ -248,7 +248,7 @@ let CommentElement = ({comments}) => {
                     <Box as="div" key={index}>
                         <Flex  p="7px" w="100%" mt="10px" flexDirection={{ base: 'column', sm: 'column', md: 'row' }} minH="150px" >
                             <Flex justifyContent="center" alignItems="center" flexBasis="15%" >
-                                <Image objectFit="cover" w={{ base: "50px", sm: "50px", md: "80px" }} h={{ base: "50px", sm: "50px", md: "80px" }} src="Images/blog-1.jpg"></Image>
+                                <Image objectFit="cover" w={{ base: "50px", sm: "50px", md: "80px" }} h={{ base: "50px", sm: "50px", md: "80px" }} src="../Images/person.png"></Image>
                             </Flex>
                             <Flex justifyContent={["center", "center", "normal"]} flexBasis="85%" >
                                 <Flex flexDirection={'column'} alignItems={["center", "center", "normal"]} minW="70%" px={'10px'} py="10px" >

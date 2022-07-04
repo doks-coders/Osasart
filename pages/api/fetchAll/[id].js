@@ -7,7 +7,7 @@ export default async ({query:{id}},res)=>{
 
     
      const client = await clientPromise
-     const db = client.db("osasart")
+     const db = client.db("test")
      
      let post =  await db.collection('posts').find().toArray()
 
