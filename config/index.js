@@ -4,4 +4,4 @@ export const server = dev ? 'http://localhost:3000' :'yourwebsite.com'
 
 
 
-export const database = dev ? 'test' :'osasart'
+export const database = 'test'
