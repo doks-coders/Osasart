@@ -168,7 +168,7 @@ let CategoriesElement = ({ totalNumber,openCategory}) => {
             {
                 categories.map((val, index) => (
                    
-                     <Text key={index} as="div" _hover={{ color: 'red' }} onClick={()=>{
+                     <Text cursor={'pointer'} key={index} as="div" _hover={{ color: 'red' }} onClick={()=>{
                       
                     }} mt="1.5"><Box  onClick={()=>openCategory(val.name)} ><Box>{val.name} <Box as="span">({val.count})</Box></Box></Box></Text>
 
@@ -213,7 +213,7 @@ const HeaderLinks = () => {
         <Flex color="black" w="100%" >
           {
             linkArray.map((val,index) => (
-              <Text key={index} p="10px" as="div">
+              <Text cursor={'pointer'} key={index} p="10px" as="div">
                 <Link href={val.link}>
                     <Box>
                     {val.name}

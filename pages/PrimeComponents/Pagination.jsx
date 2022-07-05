@@ -20,7 +20,6 @@ const PaginatorDemo = ({total,onIndexChange,indexEntered,setBasicFirst,basicFirs
 
     return (
         <div className="paginator-demo">
-          
             <div className="card">
                 <Paginator first={getCorrectIndex(indexEntered)} rows={basicRows} totalRecords={total}  onPageChange={onBasicPageChange}></Paginator>
             {/*rowsPerPageOptions={[10, 20, 30]}*/}

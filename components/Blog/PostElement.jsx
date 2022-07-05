@@ -31,6 +31,7 @@ let PostElement = ({ image, heading, name, date, comments, preview,indexEL }) =>
                     <Flex w="95%" flexDirection={'column'} >
                         {/*Heading of Post Section*/}
                         <Heading
+                        cursor={'pointer'}
                             py={{ base: '10px', sm: '7px', md: "5px" }}
                             fontSize={{ base: 'xl', sm: 'xl', md: "3xl" }}
                             _hover={{

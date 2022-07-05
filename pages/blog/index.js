@@ -3,16 +3,24 @@ import Head from 'next/head'
 import {server} from '../../config'
 import clientPromise from '../../lib/mongodb'
 import PostPage from '../../components/Blog/BlogHome'
-import { GlobalContext } from '../../Context/GlobalContext';
-import { useState } from 'react';
+
+import fetchAll from '../../MongoScripts/fetchAll'
+import fetchPostPage from '../../MongoScripts/fetchPostPage'
+import totalNumbers from '../../MongoScripts/totalNumbers'
+import Meta from '../../components/Meta'
 
 
 export default function Home({ isConnected,objectSelected,category,page}) {
 
 
-  let {posts,numberOfPosts,alltotal,allrecent} = JSON.parse(objectSelected)
+  let {posts,numberOfPosts,alltotal,allrecent,description,keywords} = JSON.parse(objectSelected)
   return (
     <>
+    <Meta 
+title={'Osasart Blog'}
+keywords={keywords}
+description={description}
+/>
     
     <PostPage 
     blogArticles={posts}
@@ -42,17 +50,18 @@ export async function getServerSideProps(context) {
    if(!search)search=''
 
 
-    const postPage = await fetch(`${server}/api/fetchPostPage/?page=${page}&limit=2&category=${category}&search=${search}`)
+    const postPage = await  fetchPostPage({page,limit:2,category,search})
 
-    const allPosts = await fetch(`${server}/api/fetchAll`)
 
-    const allTotal = await fetch(`${server}/api/totalNumbers`)
+    const allPosts = await fetchAll()
+
+    const allTotal = await totalNumbers()
 
    
 
-    let {posts,numberOfPosts} = await  postPage.json()
-    let allposts = await allPosts.json()
-    let alltotal = await allTotal.json()
+    let {posts,numberOfPosts} = await  postPage
+    let allposts = await allPosts
+    let alltotal = await allTotal
 
 
     let categoryEl =  category
@@ -88,10 +97,12 @@ export async function getServerSideProps(context) {
     let initialObject = {posts,numberOfPosts,allposts,alltotal,allrecent}
 
    let objectSelected =  JSON.stringify(initialObject)
+   let keywords = 'Blog, Coding, 3D, NFts, Bitcoins'
+   let description = 'This is the official blog page of osasart'
 
   
     return {
-      props: { isConnected: true,objectSelected,category,page},
+      props: { isConnected: true,objectSelected,category,page,keywords,description},
     }
   } catch (e) {
     console.error(e)

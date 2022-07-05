@@ -12,6 +12,7 @@ import {
 
 
 
+
 let ContentElement = ({idEntered, image, heading, author, date,message,comments,authorBio,category,tags,socialMediaLinks,authorImage }) => { 
     const {submitComment} =  useContext(GlobalContext)
 
@@ -152,7 +153,7 @@ let ContentElement = ({idEntered, image, heading, author, date,message,comments,
                 </Flex>
                 </form>
             </Flex>
-
+          
         </>
     )
 }
