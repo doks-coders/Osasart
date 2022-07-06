@@ -76,12 +76,7 @@ export async function getServerSideProps(context) {
       return(val)
     })
   
-    let allrecent= allposts.slice(0,4).map((val)=>{
-      val.date =  convertToDate(val.created)
-      return(val)
-    })
-
-    allrecent.sort((a, b) => {
+    allposts.sort((a, b) => {
       let Aprop = new Date(a.created)
       Aprop = Aprop.getTime()
 
@@ -92,6 +87,13 @@ export async function getServerSideProps(context) {
       if (Aprop > Bprop) return -1
       else return 0
     })
+
+    let allrecent= allposts.slice(0,4).map((val)=>{
+      val.date =  convertToDate(val.created)
+      return(val)
+    })
+
+    
  
 
     let initialObject = {posts,numberOfPosts,allposts,alltotal,allrecent}

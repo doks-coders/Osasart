@@ -46,13 +46,9 @@ export const getStaticProps = async (context) => {
 
         result.date = convertToDate(result.created)
 
-        allrecent = result3.slice(0, 4).map((val) => {
-            val.date = convertToDate(val.created)
-            console.log(convertToDate(val.created))
-            return (val)
-        })
+       
 
-        allrecent.sort((a, b) => {
+        result3.sort((a, b) => {
             let Aprop = new Date(a.created)
             Aprop = Aprop.getTime()
 
@@ -63,6 +59,13 @@ export const getStaticProps = async (context) => {
             if (Aprop > Bprop) return -1
             else return 0
         })
+
+        allrecent = result3.slice(0, 4).map((val) => {
+            val.date = convertToDate(val.created)
+            console.log(convertToDate(val.created))
+            return (val)
+        })
+        
         allrecent = JSON.stringify(allrecent)
 
 

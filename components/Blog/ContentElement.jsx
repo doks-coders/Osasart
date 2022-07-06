@@ -3,6 +3,7 @@ import React from 'react'
 import {useContext,useState} from 'react'
 import { GlobalContext } from '../../Context/GlobalContext';
 
+import MessageModal from '../Modal/MessageModal';
 
 import {
     Box, Flex, Image, Heading, Divider, Text, Textarea, Button,
@@ -14,7 +15,21 @@ import {
 
 
 let ContentElement = ({idEntered, image, heading, author, date,message,comments,authorBio,category,tags,socialMediaLinks,authorImage }) => { 
-    const {submitComment} =  useContext(GlobalContext)
+  
+    const submitComment = async (post,id)=>{
+        try {
+          setBool(true)
+          setmodalMessage('Loading...')
+          const res = await fetch(`http://localhost:5000/api/comments/${id}`,{method:'POST',headers:{'Content-type':'application/json'},body:JSON.stringify(post)})
+          const data = await res.json()
+          setmodalMessage('Comment Sent Successfully')
+        } catch (error) {
+          setmodalMessage('There was an error, Please Try Again')
+        }
+     
+      
+      }
+  
 
 
 
@@ -22,6 +37,10 @@ let ContentElement = ({idEntered, image, heading, author, date,message,comments,
     const [commentName,setCommentName] = useState('')
     const [commentEmail,setCommentEmail] = useState('')
     const [commentMessage,setCommentMessage] = useState('')
+
+    const [bool,setBool] = useState(false)
+    const [modalMessage, setmodalMessage] = useState('Loading...')
+
  
     const submitFormData = (e)=>{
      
@@ -152,6 +171,11 @@ let ContentElement = ({idEntered, image, heading, author, date,message,comments,
                     <Button type="submit" background="black" color="white" _hover={{ background: 'black', color: 'white' }}>Send Reply</Button>
                 </Flex>
                 </form>
+
+                {
+  bool && <MessageModal bool={bool} setBool={setBool} message={modalMessage} />
+}
+      
             </Flex>
           
         </>

@@ -43,10 +43,10 @@ const SimpleDrawer = ({btnColor})=> {
   
               <List  >
               <DrawerLink
-               links = { [{name:'About Us',link:'/'},
+               links = { [{name:'Home',link:'/'},
                {name:'Services',link:'/'},
-               {name:'Blog',link:'/'},
-               {name:'Edit Blog',link:'/'}] }
+               {name:'Blog',link:'/blog'},
+              ] }
   
               />
               </List>

@@ -6,6 +6,7 @@ return (
     name="viewport"
     content="width=device-width,initial-scale=1"
     />
+    <meta name="google-site-verification" content="fKHbDkHTan3C7mVkSWvmieWRC6dlk3VaCe28E2m0RkI" />
     <meta
     name="keywords"
     content={keywords}
