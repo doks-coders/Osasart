@@ -81,7 +81,7 @@ let PostElements = ({postElements})=>{
                 date={val.date}
                 preview={val.message[0].value}
                 comments={ (val.comments)?val.comments.length:0}
-                indexEL={val._id}
+                indexEL={val.heading.toLowerCase().replace(/ /g,'-')}
             />
                
             ))

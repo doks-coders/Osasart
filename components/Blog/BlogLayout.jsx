@@ -148,7 +148,7 @@ let RecentElements = ({recentItems}) => {
                 <RecentElement key={index} heading={val.heading}
                     date={val.date}
                     image={val.image}
-                    idEntered={val._id}
+                    idEntered={val.heading.toLowerCase().replace(/ /g,'-')}
                 />
             ))
         }

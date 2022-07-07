@@ -10,7 +10,7 @@ const fetchId = async ({id}) => {
         
         let post =  await db.collection('posts').find().toArray()
 
-        const filtered = post.filter(post=>post._id == id)
+        const filtered = post.filter(post=>post.heading.toLowerCase().replace(/ /g,'-') == id)
         if (filtered.length >0){
            console.log(filtered[0])
 

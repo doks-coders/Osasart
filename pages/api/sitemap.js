@@ -22,7 +22,7 @@ export default async function  handler (req, res) {
     
     const dynamicPaths = allPosts.map( post => {
       
-      return `${BASE_URL}/blog/${post._id}`
+      return `${BASE_URL}/blog/${post.heading.toLowerCase().replace(/ /g,'-')}`
       
     })
     

@@ -103,7 +103,7 @@ export const getStaticPaths = async () => {
     const articles = await res
 
     //paths:{params:{id:'1',id:'2'}} recreate this
-    const ids = articles.map(article => article._id)
+    const ids = articles.map(article => article.heading.toLowerCase().replace(/ /g,'-'))
     const paths = ids.map(id => ({ params: { id: id.toString() } })
 
 
