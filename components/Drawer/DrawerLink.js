@@ -2,14 +2,14 @@ import {Drawer,DrawerOverlay, DrawerContent,Box, DrawerHeader, DrawerBody, Drawe
 import React from 'react'
 import Link from 'next/link'
 
-const DrawerLink = ({links}) => {
+const DrawerLink = ({links,onClose}) => {
     
     return (
     <>
        {links.map((val,index)=>(
         <Box key={index} >
        <Link href={val.link}>
-        <ListItem    p="5"  _hover={{
+        <ListItem onClick={onClose}   p="5"  _hover={{
       background: "#242424",
       color: "white",
       transition:'background 0.5s',

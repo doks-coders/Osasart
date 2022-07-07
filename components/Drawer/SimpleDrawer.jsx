@@ -43,6 +43,7 @@ const SimpleDrawer = ({btnColor})=> {
   
               <List  >
               <DrawerLink
+              onClose={onClose}
                links = { [{name:'Home',link:'/'},
                {name:'Services',link:'/'},
                {name:'Blog',link:'/blog'},
