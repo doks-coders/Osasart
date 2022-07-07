@@ -1,3 +1,4 @@
+import { formatHeadingLink } from "../../config";
 import fetchAll from "../../MongoScripts/fetchAll";
 export default async function  handler (req, res) {
     res.statusCode = 200
@@ -22,7 +23,7 @@ export default async function  handler (req, res) {
     
     const dynamicPaths = allPosts.map( post => {
       
-      return `${BASE_URL}/blog/${post.heading.toLowerCase().replace(/ /g,'-')}`
+      return `${BASE_URL}/blog/${ formatHeadingLink(post.heading)}`
       
     })
     

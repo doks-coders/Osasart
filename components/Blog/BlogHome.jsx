@@ -12,6 +12,7 @@ import Pagination from '../../pages/PrimeComponents/Pagination'
 
 
 import Router from 'next/router'
+import { formatHeadingLink } from '../../config';
 
 
 
@@ -81,7 +82,7 @@ let PostElements = ({postElements})=>{
                 date={val.date}
                 preview={val.message[0].value}
                 comments={ (val.comments)?val.comments.length:0}
-                indexEL={val.heading.toLowerCase().replace(/ /g,'-')}
+                indexEL={formatHeadingLink(val.heading) }
             />
                
             ))

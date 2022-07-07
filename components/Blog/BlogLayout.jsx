@@ -14,6 +14,7 @@ import RecentElement from './RecentElement';
 import SimpleDrawer from '../Drawer/SimpleDrawer'
 
 import { GlobalContext } from '../../Context/GlobalContext';
+import { formatHeadingLink } from '../../config';
 
 
 
@@ -148,7 +149,7 @@ let RecentElements = ({recentItems}) => {
                 <RecentElement key={index} heading={val.heading}
                     date={val.date}
                     image={val.image}
-                    idEntered={val.heading.toLowerCase().replace(/ /g,'-')}
+                    idEntered={ formatHeadingLink(val.heading) }
                 />
             ))
         }

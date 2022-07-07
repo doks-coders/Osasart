@@ -4,6 +4,7 @@ import BlogDetails from '../../../components/Blog/BlogDetails'
 import fetchId from '../../../MongoScripts/fetchId'
 import totalNumbers from '../../../MongoScripts/totalNumbers'
 import fetchAll from '../../../MongoScripts/fetchAll'
+import { formatHeadingLink } from '../../../config'
 
 
 import Meta from '../../../components/Meta'
@@ -103,13 +104,11 @@ export const getStaticPaths = async () => {
     const articles = await res
 
     //paths:{params:{id:'1',id:'2'}} recreate this
-    const ids = articles.map(article => article.heading.toLowerCase().replace(/ /g,'-'))
-    const paths = ids.map(id => ({ params: { id: id.toString() } })
-
-
-    )
-
+    const ids = articles.map(article => formatHeadingLink(article.heading) )
+    const paths = ids.map(id => ({ params: { id: id.toString() } }) )
     console.log(paths)
+
+  
 
     return {
         paths,

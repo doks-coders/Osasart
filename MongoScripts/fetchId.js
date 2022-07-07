@@ -1,7 +1,7 @@
 import React from 'react'
 
 import clientPromise from "../lib/mongodb"
-import { database } from '../config'
+import { database, formatHeadingLink } from '../config'
 
 const fetchId = async ({id}) => {
    
@@ -9,8 +9,12 @@ const fetchId = async ({id}) => {
         const db = client.db(database)
         
         let post =  await db.collection('posts').find().toArray()
+        console.log({post})
 
-        const filtered = post.filter(post=>post.heading.toLowerCase().replace(/ /g,'-') == id)
+        const filtered = post.filter(post=> formatHeadingLink(post.heading)  == formatHeadingLink(id))
+
+        console.log({filtered,id})
+
         if (filtered.length >0){
            console.log(filtered[0])
 
