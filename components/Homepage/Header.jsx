@@ -60,7 +60,8 @@ const Header = ({onScroll}) => {
              </Flex>
               <Flex h={{sm:'50%',md:'100%',base:'50%'}} w={{sm:'100%',md:'50%',base:'100%'}}  justifyContent={'center'} alignItems={{md:'center',sm:'',base:''}} >
                {/*<VoxelDog/>*/}
-              {true && <VoxelDog/>}  
+              {false && <VoxelDog/>}  
+              { true && <Image src="Paw/dog.png"/> }
               </Flex>
             </Flex>
           </Flex>
