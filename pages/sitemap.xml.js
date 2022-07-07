@@ -2,12 +2,12 @@ import React from 'react';
 import * as fs from 'fs'
 import fetchAll from '../MongoScripts/fetchAll';
 
-const Sitemap = () => {
+const sitemap = () => {
     return null;
 };
 
 export const getServerSideProps = async ({ res }) => {
-    const BASE_URL = 'http://localhost:3000';
+    const BASE_URL = 'https://osasart.vercel.app';
 
 
  
@@ -19,7 +19,7 @@ let staticPaths = fs
         "_app.js",
         "_document.js",
         "404.js",
-        "sitemap.xml.jsx",
+        "sitemap.xml.js",
         "index.js",
         "PrimeComponents",
 
@@ -73,4 +73,4 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     };
 };
 
-export default Sitemap
+export default sitemap
