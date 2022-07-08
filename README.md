@@ -25,15 +25,12 @@ yarn create next-app --example with-mongodb with-mongodb-app
 pnpm create next-app --example with-mongodb with-mongodb-app
 ```
 
-## Configuration
+## Osasart Landing Page
 
-### Set up a MongoDB database
+### Digital Website
 
-Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
 
-### Set up environment variables
-
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+This website was designed with vercel
 
 ```bash
 cp .env.local.example .env.local
