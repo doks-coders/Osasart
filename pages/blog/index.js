@@ -99,7 +99,12 @@ export async function getServerSideProps(context) {
     let initialObject = {posts,numberOfPosts,allposts,alltotal,allrecent}
 
    let objectSelected =  JSON.stringify(initialObject)
-   let keywords = 'Blog, Coding, 3D, NFts, Bitcoins'
+
+ 
+  
+   
+ 
+   let keywords = 'osasart blog 2022, osasart blog post, osasart blog 2021, osasart blog login'
    let description = 'This is the official blog page of osasart'
 
   

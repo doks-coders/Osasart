@@ -15,12 +15,13 @@ const home = ({ articles }) => {
     />
     <meta name="google-site-verification" content="fKHbDkHTan3C7mVkSWvmieWRC6dlk3VaCe28E2m0RkI" />
     <meta
-    name="keywords"
-    content={'Osasart, Studios, 3D, Animation, Advertising, Visualisation, Architecture, Arch, Osasart Studios, Digital, Communication, Digital, Art '}
+    name="keywords" 
+   
+    content={'Osasart, Studios, 3D, Animation, Advertising, Modelling, Architecture, Osasart Studios'}
     />
     <meta
     name="description"
-    content={`Osasart creates high-quality animation for advertising, communication, and visualization. With end-to-end production capabilities, we develop custom digital content adapted to our clients' business aims and requirements. 3D Digital Content Services at its peak Osasart Studios provides  one of the best 3D quality services at very affordable prices`}
+    content={`Osasart creates high-quality animation for advertising, architecture, and visualization. With end-to-end production capabilities, we develop custom digital content adapted to our clients' business aims and requirements. 3D Digital Content Services at its peak Osasart Studios provides  one of the best 3D quality services at very affordable prices`}
     />
       <meta
     charSet='utf-8'

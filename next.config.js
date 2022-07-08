@@ -2,7 +2,7 @@ module.exports = {
     async rewrites() {
       return [
         {
-          source: '/Sitemap.xml',
+          source: '/MySitemap.xml',
           destination: '/api/sitemap',
         },
       ]
